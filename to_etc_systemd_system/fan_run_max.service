@@ -1,0 +1,11 @@
+[Unit]
+Description=start running fan at max speed
+ConditionPathExists=/opt/JetsonStartup/bin
+
+[Service]
+ExecStart=/bin/sh /opt/JetsonStartup/bin/fan_run_max.sh
+Restart=no
+Type=simple
+
+[Install]
+WantedBy=multi-user.target

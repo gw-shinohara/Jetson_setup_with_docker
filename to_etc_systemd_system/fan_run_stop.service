@@ -1,0 +1,11 @@
+[Unit]
+Description=stop running fan
+ConditionPathExists=/opt/JetsonStartup/bin /usr/lib/vino
+
+[Service]
+ExecStart=/bin/sh /opt/JetsonStartup/bin/fan_run_stop.sh
+Restart=no
+Type=simple
+
+[Install]
+WantedBy=multi-user.target

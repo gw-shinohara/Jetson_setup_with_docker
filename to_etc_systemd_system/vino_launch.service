@@ -1,0 +1,11 @@
+[Unit]
+Description=Start VNC Server using vino
+ConditionPathExists=/opt/JetsonStartup/bin 
+
+[Service]
+ExecStart=/bin/sh /opt/JetsonStartup/bin/vino_launch.sh
+Restart=no
+Type=simple
+
+[Install]
+WantedBy=multi-user.target

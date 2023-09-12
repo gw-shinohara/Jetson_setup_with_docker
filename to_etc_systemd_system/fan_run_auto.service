@@ -1,0 +1,11 @@
+[Unit]
+Description=start running and auto change fan speed
+ConditionPathExists=/opt/JetsonStartup/bin
+
+[Service]
+ExecStart=/bin/sh /opt/JetsonStartup/bin/fan_run_auto.sh
+Restart=no
+Type=simple
+
+[Install]
+WantedBy=multi-user.target
