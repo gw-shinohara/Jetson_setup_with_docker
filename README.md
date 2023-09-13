@@ -3,7 +3,7 @@ Install Jetpack to Nvidia jetson.
 The following is the procedure.
 1. Boot the host OS, Ubuntu 22.04.
 1. Install SDKManager and start the Docker container.
-1. Boot and connect the Jetson to host OS.
+1. **Boot recoverymode** and connect the Jetson to host OS.
 1. Install Jetpack4.xx on Jetson.
 
 # Import sdkmanager from dockerimage
@@ -28,10 +28,11 @@ docker run -it --rm sdkmanager --ver
 
 7. Execute command
 ```
-docker run -it --privileged -v /dev/bus/usb:/dev/bus/usb/ -v /dev:/dev -v /media/$USER:/media/nvidia:slave --name JetPack_NX_Devkit --network host sdkmanager --cli install  --logintype devzone --product Jetson --host --targetos Linux --version 4.5.1 --target JETSON_AGX_XAVIER --select 'Jetson OS' --select 'Jetson SDK Components' --flash all 
+docker run -it --rm --privileged -v /dev/bus/usb:/dev/bus/usb/ -v /dev:/dev -v /media/$USER:/media/nvidia:slave sdkmanager --cli install --logintype devzone --product Jetson --version 4.6.2 --targetos Linux --host --target JETSON_AGX_XAVIER_TARGETS --flash all
 ```
 
 1. Install HOST COMPONENTS and even flash Jetson OS
+*Remove check sdkmanager compornents*
    
 2. Start Jetson and perform the initial setup. At this time, set UserName to nvidia, Password to nvidia, and install in English.
     
