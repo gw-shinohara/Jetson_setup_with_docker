@@ -28,7 +28,7 @@ docker run -it --rm sdkmanager --ver
 
 7. Execute command
 ```
-docker run -it --rm --privileged -v /dev/bus/usb:/dev/bus/usb/ -v /dev:/dev -v /media/$USER:/media/nvidia:slave sdkmanager --cli install --logintype devzone --product Jetson --version 4.6.2 --targetos Linux --host --target JETSON_AGX_XAVIER_TARGETS --flash all
+docker run -it --rm --privileged -v /dev/bus/usb:/dev/bus/usb/ -v /dev:/dev -v /media/$USER:/media/nvidia:slave sdkmanager --cli install --logintype devzone --product Jetson --version 4.6.2 --targetos Linux --host --target JETSON_AGX_XAVIER_TARGETS --flash all --additionalsdk DeepStream
 ```
 
 1. Install HOST COMPONENTS and even flash Jetson OS
